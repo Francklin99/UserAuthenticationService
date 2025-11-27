@@ -1,0 +1,61 @@
+# Visual Studio
+.vs/
+
+# Build outputs
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+*.npg
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Rider
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Entity Framework Core Migrations temp files
+*.jfm
+
+# Publish
+out/
+publish/
+wwwroot/lib/
+
+# Others
+*.cache
+*.tmp
+Thumbs.db
+ehthumbs.db
+
+# Compiled DLLs
+*.dll
+*.exe
+*.pdb
+*.mdb
+
+# Backup files
+*.bak
+*.orig
+
+# Coverage
+coverage/
+coverage.json
+TestResults/
