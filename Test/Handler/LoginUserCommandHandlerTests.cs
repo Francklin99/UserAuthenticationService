@@ -3,6 +3,7 @@ using Application.Interfaces;
 using Domain.Common;
 using Domain.Entities;
 using Moq;
+using FluentAssertions;
 
 namespace UserAuthenticationService.Test.Handler
 {
@@ -23,13 +24,8 @@ namespace UserAuthenticationService.Test.Handler
         public async Task Handle_ShouldReturnSuccess_WhenCredentialsAreValid()
         {
             // Arrange
-            var command = new LoginUserCommand { Email = "test@example.com", Password = "password" };
-            var user = new User
-            {
-                FullName = "Test User",
-                Email = "test@example.com",
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword("password")
-            };
+            var command = new LoginUserCommand("test@example.com", "password");
+            var user = new User("Test User", "test@example.com", BCrypt.Net.BCrypt.HashPassword("password"), "1234567890");
 
             _unitOfWorkMock.Setup(u => u.UserRepository.GetByEmailAsync(command.Email, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(user);
@@ -51,7 +47,8 @@ namespace UserAuthenticationService.Test.Handler
         public async Task Handle_ShouldReturnFailure_WhenUserNotFound()
         {
             // Arrange
-            var command = new LoginUserCommand { Email = "test@example.com", Password = "password" };
+            // Arrange
+            var command = new LoginUserCommand("test@example.com", "password");
 
             _unitOfWorkMock.Setup(u => u.UserRepository.GetByEmailAsync(command.Email, It.IsAny<CancellationToken>()))
                 .ReturnsAsync((User?)null);
@@ -68,12 +65,9 @@ namespace UserAuthenticationService.Test.Handler
         public async Task Handle_ShouldReturnFailure_WhenPasswordIsInvalid()
         {
             // Arrange
-            var command = new LoginUserCommand { Email = "test@example.com", Password = "wrongpassword" };
-            var user = new User
-            {
-                Email = "test@example.com",
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword("password")
-            };
+            // Arrange
+            var command = new LoginUserCommand("test@example.com", "wrongpassword");
+            var user = new User("Test User", "test@example.com", BCrypt.Net.BCrypt.HashPassword("password"), "1234567890");
 
             _unitOfWorkMock.Setup(u => u.UserRepository.GetByEmailAsync(command.Email, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(user);

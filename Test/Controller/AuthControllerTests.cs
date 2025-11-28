@@ -4,6 +4,8 @@ using Application.Features.Auth.Commands.Login;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
+using FluentAssertions;
+using Application.Wrappers;
 
 namespace UserAuthenticationService.Test.Controller
 {
@@ -22,7 +24,8 @@ namespace UserAuthenticationService.Test.Controller
         public async Task Login_ShouldReturnOk_WhenCredentialsAreValid()
         {
             // Arrange
-            var command = new LoginUserCommand { Email = "test@example.com", Password = "password" };
+            // Arrange
+            var command = new LoginUserCommand("test@example.com", "password");
             var responseDto = new LoginReponseDto { Email = "test@example.com", JwToken = "token" };
             var response = new Response<LoginReponseDto>(responseDto, "Success");
 
