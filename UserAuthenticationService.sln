@@ -1,7 +1,6 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36623.8 d17.14
+VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthenticationService.API", "API\UserAuthenticationService.API.csproj", "{BA18F3C8-4577-4372-9E7E-CF257811B135}"
 EndProject
@@ -10,6 +9,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthenticationService.Application", "Application\UserAuthenticationService.Application.csproj", "{AE2993C4-5767-4A41-A7B0-AA35D9C60FDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthenticationService.Infrastructure", "Infrastructure\UserAuthenticationService.Infrastructure.csproj", "{4814E545-FE90-417E-AB2E-60B16F1C40E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthenticationService.Test", "UserAuthenticationService.Test\UserAuthenticationService.Test.csproj", "{3E6DB4B3-A0BE-46BA-BD8E-013A59A3D20E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +34,10 @@ Global
 		{4814E545-FE90-417E-AB2E-60B16F1C40E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4814E545-FE90-417E-AB2E-60B16F1C40E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4814E545-FE90-417E-AB2E-60B16F1C40E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E6DB4B3-A0BE-46BA-BD8E-013A59A3D20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E6DB4B3-A0BE-46BA-BD8E-013A59A3D20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E6DB4B3-A0BE-46BA-BD8E-013A59A3D20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E6DB4B3-A0BE-46BA-BD8E-013A59A3D20E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
